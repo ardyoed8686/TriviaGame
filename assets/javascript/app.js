@@ -1,4 +1,9 @@
+// array of questions and answers
+var trivia = {[
+    
+]} In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?
 // on click of start button timer countdown begins
+    // 120 second timer
 // 10 multiple choice questions show
 // player selects one answer for each question
 // if player finishes before the timer click done button to end game and timer
@@ -18,8 +23,6 @@ if (seconds === 0) {
 }
 timer = setInterval(countDown, 1000);
 
-
-console.log(timer);
 
 
 

@@ -12,24 +12,54 @@
 <!-- css style link -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <!-- main section for page -->
+    <div class="container">
+        <div class="jumbotron">
 
-            <body>
-                <!-- main section for page -->
-                <div class="mainContainer">
-                    <div class="jumbotron">
+        <!-- game header -->
+        <h1>Totally Trivial Trivia</h1>
+        <h2>Movie Trivia</h2>
 
-                        <!-- game header -->
-                        <h1>Totally Trivial Trivia</h1>
-                        <h2>How many can you get right?</h2>
+        <!-- button to start the game -->
+        <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
+
+        <!-- question form -->
+        <form id="questionaire">
+        <!-- countdown clock -->
+            <div>Time Remaining: <span id="timeRemaining"></span></div>
+                <div class="movie-quest">
+                    <p class="quest">How long is the first Harry Potter movie: Harry Potter and The Philosopher's Stone?</p>
+                    <form class="question">
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">1.5 hours</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="correct">2.5 hours</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">3.5 hours</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">4.5 hours</label>
+                    </form>
+
+                    <p class="quest">Which 1984 film featured a main character named Axel Foley?</p>
+                    <form class="question">
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">Back To The Future</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="correct">Beverley Hills Cop</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">Footloose</label>
+                    <label class="form-check form-check-inline text-mysize">
+                        <input type="radio" name="optradio" class="optradio" value="wrong">The Breakfast Club</label>
+                    </form>
+                    
+                        </div>
                     </div>
 
-                    <!-- button to start the game -->
-                    <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
-                    <div class="gameDiv">
-                        <h2 id="test">Time Remaining: <span id="timeRemaining"></span></h2>
-                    </div>
-                    <form class="game-quest"></form>
+                </div>
+
+
 
                 </div>
                 <!-- end game button to finish the game before the time is up -->
@@ -45,10 +75,7 @@
                 <!-- jquery and javascript file links -->
                 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
                 <script src="assets/javascript/app.js"></script>
-
-            </body>
             
-            </html>
     
 </body>
 </html>
