@@ -1,2 +1,2 @@
 # TriviaGame
-answer trivia questions before the tier runs out
+answer trivia questions before the timer runs out

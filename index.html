@@ -20,15 +20,19 @@
 
         <!-- game header -->
         <h1>Totally Trivial Trivia</h1>
+        <br>
         <h2>Movie Trivia</h2>
 
         <!-- button to start the game -->
+        <br>
         <button type="button" class="btn btn-secondary" id="start-game">Start Game</button>
 
         <!-- question form -->
         <form id="questionaire">
         <!-- countdown clock -->
-            <div>Time Remaining: <span id="timeRemaining"></span></div>
+            <div id="countdown">Time Remaining: <span id="timeRemaining"></span></div>
+            <br><br>
+
                 <div class="movie-quest">
                     <p class="quest">1. How long is the first Harry Potter movie: Harry Potter and The Philosopher's Stone?</p>
                     <form class="question">
@@ -141,13 +145,19 @@
                         </div>
                     </div>
 
-                </div>
 
-
-
-                </div>
                 <!-- end game button to finish the game before the time is up -->
-                <p class="lead btn btn-lg btn-danger" id="all-done">Done</p>
+                <div class="finished">
+                        <p class="lead btn btn-lg btn-primary" id="all-done">Done</p>
+                </div>
+
+            </div>
+
+
+
+    </div>
+
+               
 
                 <!-- message to be displayed when time is up -->
                 <!-- display the results of the game -->

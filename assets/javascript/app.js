@@ -1,7 +1,64 @@
-// array of questions and answers
-var trivia = {[
+$(document).ready(function() {
+
+// questions, timer and result hidden until start button is clicked
+    $("#countdown").hide();
+    $(".movie-quest").hide();
+    $(".finished").hide();
+    $(".results").hide();
+
+
+    // setup variables
+    var seconds = 10;
+    var correctCount = 0;
+    var wrongCount = 0;
+    var unanswered = 0;
+
+    // start button is clicked show questions, timer and done button
+    $("#start-game").on("click", function(){
+        $("#start-game").hide();
+        $("#countdown").show();
+        $(".movie-quest").show();
+        $(".finished").show();
+    });
+
+
+    // timer countdown
+    var countDown = function() {
+        seconds--;
+        // display timer countdown
+        $("#timeRemaining").text(seconds + " seconds");
+    }
+    var timer = setInterval(countDown, 1000);
     
-]} In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?
+    function stopTimer() {
+        clearInterval(timer);
+    }
+
+    function overHideAll() {
+        $(".movie-quest").hide();
+        $(".finished").hide();
+        $(".results").show();
+    } 
+    // time remaining is equal to 0
+    if (seconds === 0) {
+        stopTimer();
+        $(".movie-quest").hide();
+        $(".finished").hide();
+        $(".results").show();
+
+
+    }
+
+});
+
+
+
+  
+   
+//     countDown();
+
+
+
 // on click of start button timer countdown begins
     // 120 second timer
 // 10 multiple choice questions show
@@ -10,18 +67,9 @@ var trivia = {[
 // else timer endss and game ends
 // show the play results
 
-var seconds = 120;
-var timer;
-
-var countDown = function() {
-    seconds--;
-    $("#timeRemaining").text(seconds + " seconds");
-if (seconds === 0) {
-    clearInterval(window.timer);
-}
     // clear timer
-}
-timer = setInterval(countDown, 1000);
+
+
 
 
 

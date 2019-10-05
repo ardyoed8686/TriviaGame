@@ -1,6 +1,26 @@
-.container{
+.container {
+    background-image: url("abstract-party-background.jpg");
+    background-color: olive;  
     text-align: center;
-    background-image: url("balloon-destroyer-viral-video-twitter-jan-erichson.jpg");
-    background-color: orange;  
-    padding: 10px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.jumbotron {
+    width: 90%;
+   
+    margin: 0 auto;
+    background-color: orange;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
+}
+#start-game {
+    position: relative;
+}
+
+.finished {
+    text-align: center;
+    color: white;
 }
