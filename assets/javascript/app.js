@@ -13,23 +13,25 @@ $(document).ready(function() {
     var wrongCount = 0;
     var unanswered = 0;
 
-    // start button is clicked show questions, timer and done button
-    $("#start-game").on("click", function(){
-        $("#start-game").hide();
-        $("#countdown").show();
-        $(".movie-quest").show();
-        $(".finished").show();
-    });
+    // timer function countdown
+    function timerCount() {
+        timer = setInterval(countDown, 1000);
+    }
 
-
-    // timer countdown
-    var countDown = function() {
+    function countDown() {
         seconds--;
         // display timer countdown
         $("#timeRemaining").text(seconds + " seconds");
+
+        // time remaining is equal to 0
+        if (seconds === 0) {
+            stopTimer();
+            overHideAll();
+            showSummary();
+        }
     }
-    var timer = setInterval(countDown, 1000);
-    
+
+
     function stopTimer() {
         clearInterval(timer);
     }
@@ -39,15 +41,21 @@ $(document).ready(function() {
         $(".finished").hide();
         $(".results").show();
     } 
-    // time remaining is equal to 0
-    if (seconds === 0) {
-        stopTimer();
-        $(".movie-quest").hide();
-        $(".finished").hide();
-        $(".results").show();
-
+    
+    function showSummary() {
 
     }
+
+    // start button is clicked show questions, timer and done button
+    $("#start-game").on("click", function(){
+        $("#start-game").hide();
+        $("#countdown").show();
+        $(".movie-quest").show();
+        $(".finished").show();
+            // call functions
+            countDown();
+
+    });
 
 });
 
