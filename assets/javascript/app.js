@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
     // setup variables
-    var seconds = 10;
+    var seconds = 30;
     var correctAnswer = 0;
     var wrongAnswer = 0;
     var unanswered = 0;
@@ -18,18 +18,6 @@ $(document).ready(function() {
         timer = setInterval(countDown, 1000);
     }
 
-    function countDown() {
-        seconds--;
-        // display timer countdown
-        $("#timeRemaining").text(seconds + " seconds");
-
-        // time remaining is equal to 0
-        if (seconds === 0) {
-            stopTimer();
-            overHideAll();
-            showSummary();
-        }
-    }
 
     // clear timer
     function stopTimer() {
@@ -45,11 +33,24 @@ $(document).ready(function() {
     
     function showSummary() {
         $(".results").show();
-        unanswered = (9-(correctAnswer+wrongAnswer));
-
         $("correct-score").text("Correct Answers: " + correctAnswer);
         $("wrong-score").text("Wrong Answers: " + wrongAnswer);
         $("unanswered").text("Unanswered: " + unanswered);
+        unanswered = (9-(correctAnswer+wrongAnswer));
+    }
+
+
+    function countDown() {
+        seconds--;
+        // display timer countdown
+        $("#timeRemaining").text(seconds + " seconds");
+
+        // time remaining is equal to 0
+        if (seconds === 0) {
+            stopTimer();
+            overHideAll();
+            showSummary();
+        }
     }
 
     // start button is clicked show questions, timer and done button
@@ -60,32 +61,30 @@ $(document).ready(function() {
         $(".finished").show();
             // call functions
         timerCount();
-
     });
 
+
+    // when answer button is clicked
+    $("input[type=radio]").on("change", function() {
+        correctAnswer = $("input[value=correct]:checked").length;
+        wrongAnswer = $("input[value=wrong]:checked").length;
+        unanswered = (8-(correctAnswer+wrongAnswer));
+        console.log(correctAnswer+wrongAnswer);
+        // console.log(wrongAnswer);
+        // console.log(unanswered);
+    
+    });
+
+    // on click of the done button
+    $("#all-done").on ("click", function() {
+        $("#start-game").hide();
+        $("#countdown").hide();
+        $(".movie-quest").hide();
+        $(".finished").hide();
+
+        showSummary();
+    });
+
+
+
 });
-
-
-
-  
-   
-//     countDown();
-
-
-
-// on click of start button timer countdown begins
-    // 60 second timer
-// 10 multiple choice questions show
-// player selects one answer for each question
-// if player finishes before the timer click done button to end game and timer
-// else timer endss and game ends
-// show the play results
-
-    // clear timer
-
-
-
-
-
-
-
