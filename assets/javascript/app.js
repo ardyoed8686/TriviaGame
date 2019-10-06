@@ -9,8 +9,8 @@ $(document).ready(function() {
 
     // setup variables
     var seconds = 10;
-    var correctCount = 0;
-    var wrongCount = 0;
+    var correctAnswer = 0;
+    var wrongAnswer = 0;
     var unanswered = 0;
 
     // timer function countdown
@@ -31,23 +31,29 @@ $(document).ready(function() {
         }
     }
 
-
+    // clear timer
     function stopTimer() {
         clearInterval(timer);
     }
 
+    // hide questons and buttons when game over 
     function overHideAll() {
         $(".movie-quest").hide();
         $(".finished").hide();
-        $(".results").show();
+       
     } 
     
     function showSummary() {
+        $(".results").show();
+
+        $("correct-score").text("Correct Answers: " + correctAnswer);
+        $("wrong-score").text("Wrong Answers: " + wrongAnswer);
+        $("unanswered").text("Unanswered: " + unanswered);
 
     }
 
     // start button is clicked show questions, timer and done button
-    $("#start-game").on("click", function(){
+    $("#start-game").on("click", function() {
         $("#start-game").hide();
         $("#countdown").show();
         $(".movie-quest").show();
