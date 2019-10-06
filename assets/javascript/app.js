@@ -50,7 +50,6 @@ $(document).ready(function() {
         $("correct-score").text("Correct Answers: " + correctAnswer);
         $("wrong-score").text("Wrong Answers: " + wrongAnswer);
         $("unanswered").text("Unanswered: " + unanswered);
-
     }
 
     // start button is clicked show questions, timer and done button
@@ -60,7 +59,7 @@ $(document).ready(function() {
         $(".movie-quest").show();
         $(".finished").show();
             // call functions
-            countDown();
+        timerCount();
 
     });
 
