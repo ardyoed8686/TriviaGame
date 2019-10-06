@@ -45,6 +45,7 @@ $(document).ready(function() {
     
     function showSummary() {
         $(".results").show();
+        unanswered = (9-(correctAnswer+wrongAnswer));
 
         $("correct-score").text("Correct Answers: " + correctAnswer);
         $("wrong-score").text("Wrong Answers: " + wrongAnswer);
@@ -74,7 +75,7 @@ $(document).ready(function() {
 
 
 // on click of start button timer countdown begins
-    // 120 second timer
+    // 60 second timer
 // 10 multiple choice questions show
 // player selects one answer for each question
 // if player finishes before the timer click done button to end game and timer
